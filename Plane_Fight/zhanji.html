@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+
+			body #box{
+				width: 1000px;
+				height: auto;
+				background: #F16C00;
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+			}
+			h2{
+				color: #000000;
+				font-size: 45px;
+				position: absolute;
+				left: 300px;
+				width: auto;
+				height: auto;
+			}
+			ul{
+				width: 1000px;
+				margin: 70px auto;
+			}
+			li{
+				width: auto;
+				line-height: 40px;
+				font-size: 30px;
+				color:seagreen;
+				margin: 10px auto;
+			}
+			
+			p{
+				width: 200px;
+				line-height: 100px;
+				color: #000000;
+				font-size: 25px;
+				text-align: center;
+				background:#999999;
+				position: absolute;
+				left:700px;
+				top: 100px;
+			}
+		</style>
+		<script src="ajax.js"></script>
+		<script>
+			onload = function(){
+				var box = document.getElementById("box");
+				var ul = document.getElementsByTagName("ul")[0];
+				var p =document.getElementsByTagName("p")[0];
+				
+				ajax({
+					 url:"http://60.205.181.47/myPHPCode4/getRank.php",
+					data:{},
+					success: function(data){
+						  var arr =(JSON.parse(data));
+						 for(var i =0 ;i<arr.length ; i++){
+						 	var obj = arr[i];
+							  var li = document.createElement("li");
+							  ul.appendChild(li);
+							    li.innerHTML ="第"+(i+1)+"名："+obj.name+":&nbsp&nbsp&nbsp"+obj.score
+						     }
+							    
+							},
+					fail: function(data){
+						console.log("请求失败！");
+							}
+					})
+				
+				p.onclick = function(){
+					location.href = "feijidazhan.html";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<h2>各位好汉战绩风云榜</h2>
+			<p>再来一局</p>
+			<ul>
+				
+			</ul>
+		</div>
+	</body>
+</html>

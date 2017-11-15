@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style01.css" />
+		
+		<script src="dest/js/base.js"></script>
+		
+		<script src="dest/js/gameEngnie.js"></script>
+		<script src="dest/js/myplan.js"></script>
+		<script src="dest/js/bullet.js"></script>
+		<script src="dest/js/enemy.js"></script>
+		<script src="dest/js/common.js"></script>
+		<script src="ajax.js"></script>
+
+		<script >
+			onload =function(){
+				var main =document.getElementById("main")
+				var list = document.getElementById("list");
+				var ali = list.getElementsByTagName("li");
+
+				
+				for(var i = 0;i<ali.length; i++){
+					ali[i].onclick = function(){
+						list.parentNode.removeChild(list);
+						
+						
+						//加载引擎
+						gameEngnie.init().startgame()
+						
+						//子弹发射间隔
+						myPlan.fireInterval = this.value-0;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<p></p>
+			<ul id="list">
+				<li value="800">超级困难</li>
+				<li value="500">非常困难</li>
+				<li value="100">一般困难</li>
+				<li value="60">春哥附体</li>
+			</ul>
+		</div>
+	</body>
+</html>

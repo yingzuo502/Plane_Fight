@@ -1,0 +1,121 @@
+@charset "UTF-8";
+html,body,ul,li{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+
+$w1:200px;
+$ab:absolute;
+$pic:no-repeat;
+
+#main{
+    width: 480px;
+    height: 853px;
+    background: url(../images2/bg.jpg) $pic;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+            #list{
+                width: $w1;
+                height: 400px;
+                position: $ab;
+                left: 140px;
+                top: 20%;
+            
+                     li{
+                        width: $w1;
+                        line-height: 80px;
+                        background: #FF3333;
+                        color: white;
+                        font-size: 30px;
+                        margin: 20px auto;
+                        text-align: center;
+                        font-family: "宋体";
+                        border-radius:6px ;
+                    }
+            }
+      }
+      
+      
+/*创建加载界面飞机大战*/
+.logo{
+    width: 428px;
+    height: 104px;
+    background: url(../images2/logo.png) $pic;
+    position: $ab;
+    left: 26px;
+    top: 20%;
+}
+
+
+.lode{
+    width: $w1;
+    height: 42px;
+    position: $ab;
+    left:140px;
+    top: 70%;
+    background: url(../images2/loading1.png) $pic;
+}
+
+/*创建我的飞机*/
+.myplan{
+    width: 98px;
+    height: 122px;
+    background: url(../images2/me.png) $pic;
+    position: $ab;
+}
+
+
+/*创建子弹*/
+.bullet{
+    width: 7px;
+    height: 18px;
+    background: url(../images2/bullet.png) $pic;
+    position: $ab;
+}
+
+.bullet-die{
+    width: 41px;
+    height: 43px;
+    background:  url(../images2/die1.png) $pic;
+    position: $ab;
+    
+}
+
+/*创建敌人飞机*/
+.enemy_largr{
+    width:165px;
+    height: 256px;
+    background: url(../images2/plane3.png) $pic;
+    position: $ab;
+}
+
+.enemy_middle{
+    width:70px;
+    height: 92px;
+    background: url(../images2/plane2.png) $pic;
+    position: $ab;
+}
+
+.enemy_small{
+    width:59px;
+    height: 36px;
+    background: url(../images2/plane1.png) $pic;
+    position: $ab;
+}
+
+
+/*分数计算样式*/
+.score{
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000;
+    background: rgba(1,1,1,0);
+    border-radius: 7px;
+    border: 1px solid #555555;
+    position: $ab;
+    lefe:250px;
+    top: 0;
+    font-size: 20px;
+    z-index: 10 ; 
+}
